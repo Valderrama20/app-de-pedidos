@@ -1,5 +1,6 @@
 
 .form{
+    height: 200px;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -11,4 +12,10 @@
     display: flex;
     justify-content: center;
     justify-content: space-evenly;
+}
+
+img {
+    background-color: antiquewhite;
+    padding: 70px 55px;
+    border-radius:50%;
 }
