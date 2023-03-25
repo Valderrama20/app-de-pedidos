@@ -1,21 +1,32 @@
 
 
  .nav{
-    border: 1px solid black;
+    border-bottom: 1px solid black;
     display: flex;
     justify-content: flex-end;
  }
+
+  .nav p{
+  position: absolute;
+  font-size: 30px;  
+  top: -5px; 
+  left: 80px   ;
+  }
+
  .bottons { 
     display: flex;
-    margin-right: 150px;
+    margin-right: 100px;
+    
  }
 
  .button {
     display: flex;
     flex-direction: column;
     margin: 15px;
-    align-items: center;
+    align-items: center; 
+    color: black;
  }
+
 
  .button i{
    font-size: 25px;

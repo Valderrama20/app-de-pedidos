@@ -5,7 +5,7 @@
     display: inline-block;
     padding: 0px 0px;
     border-radius: 10px;
-    
+    background-color: white;
     
 }
 
@@ -27,4 +27,13 @@
 /* ------------------Home Css----------- */
 .home {
     text-align: center;
+    background-color: rgb(245, 245, 245);
+}
+
+.home h2{
+    display: inline;
+    padding: 0 300px;
+    font-size: 50px;
+    border-bottom: 2px solid rgb(208, 208, 208);
+
 }
