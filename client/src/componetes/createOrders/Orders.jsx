@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import style from './Orders.module.css'
-
+import axios from 'axios'
 
 
 export default function () {
@@ -18,17 +18,15 @@ export default function () {
                 })
 
     const changeData = (e) => { 
-
-     console.log(data)
-
        let value = e.target.type == "checkbox"? e.target.checked : e.target.value
-
-         setData({...data,[e.target.name]:value})
-
-    //   console.log(e.target.name,e.target.value) radio
-
-        // console.log(e.target.name,e.target.checked) checkbox
+       setData({...data,[e.target.name]:value})
     
+    }
+
+    const create = async () => {
+        
+        const respuesta = await axios.get("http://localhost:3001/user/jose23122009@gmail.com")
+        console.log(respuesta)
     }
 
     return (<div className={style.form}>
@@ -69,6 +67,9 @@ export default function () {
         <div> 
                 <label htmlFor="">Detalles</label>
                  <textarea name="detalles" id="" cols="15" rows="5s" onChange={changeData}></textarea>
+            </div>
+            <div>
+                <button onClick={create}>Crear Pedido</button>
             </div>
         
     </div>)

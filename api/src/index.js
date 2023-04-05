@@ -6,9 +6,9 @@ const app = express();
 
 // base de datos
 
-const user = 'joseGarciaAdmin'
-const password = '9oGHn50JOgse4SAC'
-const uri = `mongodb+srv://joseGarciaAdmin:${password}@cluster2.biw8gfr.mongodb.net/?retryWrites=true&w=majority`
+const user = ''
+const password = ''
+const uri = `mongodb+srv://valderrama20:${password}@cluster0.vrpkma4.mongodb.net/?retryWrites=true&w=majority`
 
 mongoose.connect(uri)
 .then(() => console.log('base de datos conectada'))

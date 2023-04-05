@@ -33,7 +33,7 @@ router.post("/newUser", (req,res) => {
    newUser.save((err) => err? console.log(err): console.log('Usuario creado con exito') )
    
 
-   res.json(data)
+   res.json(newUser)
 })
 
 router.post('/newOrder', (req,res) => {
