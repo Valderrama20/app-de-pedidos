@@ -6,6 +6,14 @@ const router = Router()
 
 ////////////////// Get \\\\\\\\\\\\\\\\\\\\\
 
+router.get("/user", async (req,res) => {
+   const id = req.params.id
+
+   const orders = await Users.find()
+
+   res.json(orders)
+})
+
 router.get("/user/:gmail", async (req,res) => {
    const gmail = req.params.gmail
    
@@ -14,12 +22,21 @@ router.get("/user/:gmail", async (req,res) => {
    res.json(user) 
 })
 
+
 router.get("/orders/:id", async (req,res) => {
    const id = req.params.id
 
    const orders = await Orders.find({"idUser": id})
 
    res.json(orders)
+})
+
+router.get("/orders", async (req,res) => {
+
+   const orders = await Orders.find()
+
+   const orden = orders.sort((a, b) => new Date(a.fecha) > new Date(b.fecha));
+   res.json(orden)
 })
 
 
