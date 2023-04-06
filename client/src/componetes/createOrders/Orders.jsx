@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import style from './Orders.module.css'
 import axios from 'axios'
+import { useFetch } from '../../hooks/useFetch'
 
 
 export default function () {
+
     const [data,setData] = useState(
         {
             algodon:false,
@@ -24,9 +26,9 @@ export default function () {
     }
 
     const create = async () => {
-        
-        const respuesta = await axios.get("http://localhost:3001/user/jose23122009@gmail.com")
-        console.log(respuesta)
+
+        const respuesta = await axios.post('http://localhost:3001/newOrder',data)
+        console.log(respuesta.data)
     }
 
     return (<div className={style.form}>
@@ -52,7 +54,7 @@ export default function () {
             </div>
              <div> 
                 <label htmlFor="">Fecha de entrega</label>
-                 <input type="text" name='fecha' onChange={changeData} />
+                 <input type="date" name='fecha' onChange={changeData} />
             </div>
             <div> 
                 <label htmlFor="">Total</label>

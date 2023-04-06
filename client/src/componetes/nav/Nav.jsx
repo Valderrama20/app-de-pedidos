@@ -10,17 +10,17 @@ export default function () {
          <label htmlFor="">Casa</label>
         </div>
         <div className={style.button}>
-        <i class="bi bi-card-checklist"></i>
+        <i className="bi bi-card-checklist"></i>
          <label htmlFor="">Pedidos</label>
         </div>
         <Link to="/pedidos">
         <div className={style.button}>
-        <i class="bi bi-bag-check"></i>
+        <i className="bi bi-bag-check"></i>
          <label htmlFor="">Crear Pedido</label>
         </div>
         </Link>
         <div className={style.button}>
-        <i class="bi bi-person-vcard"></i>
+        <i className="bi bi-person-vcard"></i>
          <label htmlFor="">Clientes</label>
         </div>
         </div>
