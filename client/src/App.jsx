@@ -4,6 +4,8 @@ import 'bootstrap-icons/font/bootstrap-icons.css'
 import Home from './componetes/home/Home'
 
 
+
+
 function App() {
 
   return (

@@ -4,7 +4,10 @@ import Cars from "./Cars"
 import style from "./general.module.css"
 import axios from "axios"
 
-const URL_FETCH = "https://app-de-pedidos-e2rnd1g8w-valderrama20.vercel.app"
+
+
+
+const URL = import.meta.env.VITE_URL_FETCH || "http://localhost:3001"
 
 export default function() {
   
@@ -16,7 +19,8 @@ export default function() {
    },[])
 
    const getOrders = async () => {
-    const data = await axios.get(`${URL_FETCH}/orders`)
+    const data = await axios.get(`${URL}/orders`)
+    console.log(data.data)
     setOrders(data.data)
    }
      

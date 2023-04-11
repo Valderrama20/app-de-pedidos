@@ -1,7 +1,8 @@
 import style from './general.module.css'
 
 export default function ({order}) {
-  console.log(order)
+
+   
     return(
     <div className={style.car}>
     <img src="https://i0.wp.com/golmarymar.com.ar/wp-content/uploads/Publi_Gongys_Candy.jpg?fit=600%2C600&ssl=1" alt="" />

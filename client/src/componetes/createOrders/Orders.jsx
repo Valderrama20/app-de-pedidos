@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import style from './Orders.module.css'
 import axios from 'axios'
-import { useFetch } from '../../hooks/useFetch'
+
+const URL = import.meta.env.VITE_URL_FETCH || "http://localhost:3001"
+
 
 
 export default function () {
@@ -27,7 +29,7 @@ export default function () {
 
     const create = async () => {
 
-        const respuesta = await axios.post('http://localhost:3001/newOrder',data)
+        const respuesta = await axios.post(`${URL}/newOrder`,data)
         console.log(respuesta.data)
     }
 
