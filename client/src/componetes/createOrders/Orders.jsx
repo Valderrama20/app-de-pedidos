@@ -39,40 +39,40 @@ export default function () {
              <div> 
                 <img src="" alt="Logo" />
             </div>
-            <div>
+            <div className={style.checkbox}>
                 <input type="checkbox" name='algodon' onClick={changeData}/>
                 <input type="checkbox" name='pochoclos' onClick={changeData}/>
                 <input type="checkbox" name='paletas' onClick={changeData}/>
             </div>
-            <div>
+            <div className={style.radio}>
             <input type="radio" name="envio" value={true} onClick={changeData}/>
             <input type="radio" name="envio" value={false} onClick={changeData}/>
             </div>
             </div>
             <div className={style.right}>
-                 <div> 
-                <label htmlFor="">Cliente</label>
+                 <div className={style.input}> 
+                <label htmlFor="">Cliente:</label>
                  <input type="text" name='cliente' onChange={changeData}/>
             </div>
-             <div> 
-                <label htmlFor="">Fecha de entrega</label>
+             <div className={style.input}> 
+                <label htmlFor="">Fecha de entrega:</label>
                  <input type="date" name='fecha' onChange={changeData} />
-            </div>
-            <div> 
-                <label htmlFor="">Total</label>
+            </div >
+            <div className={style.input}> 
+                <label htmlFor="">Total:</label>
                  <input type="text" name='total' onChange={changeData}/>
             </div>
-            <div> 
-                <label htmlFor="">Abono</label>
+            <div className={style.input}> 
+                <label htmlFor="">Abono:</label>
                  <input type="text" name='abono' onChange={changeData}/>
             </div>
             </div>
         </div>
-        <div> 
-                <label htmlFor="">Detalles</label>
+        <div className={style.detalles}> 
+                <label htmlFor="">Detalles:</label>
                  <textarea name="detalles" id="" cols="15" rows="5s" onChange={changeData}></textarea>
             </div>
-            <div>
+            <div className={style.btn}>
                 <button onClick={create}>Crear Pedido</button>
             </div>
         

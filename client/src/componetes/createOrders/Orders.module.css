@@ -1,21 +1,104 @@
 
 .form{
-    height: 200px;
+    height: auto;
     display: flex;
     flex-direction: column;
     text-align: center;
-    margin: 50px 100px;
+    margin: 0px 100px;
+    border: 2px solid rgb(182, 182, 182);
+    border-radius: 10px ;
+    padding: 30px 0px;
 }
 
 .top {
-    border: 1px solid red;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     justify-content: space-evenly;
 }
 
 img {
-    background-color: antiquewhite;
-    padding: 70px 55px;
+    border: 1px solid rgb(159, 159, 159);
+    padding: 90px 75px;
     border-radius:50%;
+    margin-top: px;
+}
+
+.checkbox input{
+    margin: 50px 10px 10px 10px;
+    height: 25px;
+    width: 25px;
+
+}
+.radio input {
+    height: 25px;
+    width: 25px;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin: 10px 0;
+     
+}
+
+.input label {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(77, 77, 77);
+    margin: 10px 0;
+}
+
+
+.input input {
+    outline: none;
+   border: 1px solid rgb(205, 205, 205);
+   border-radius: 5px;
+   font-size: 15px;
+   padding: 5px;
+   width: 350px;
+
+}
+
+.detalles {
+    display: flex;
+    flex-direction: column ;
+    align-items: center;
+}
+
+.detalles label {
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(77, 77, 77);
+    margin: 10px 0;
+}
+
+.detalles textarea {
+    outline: none;
+    border: 1px solid rgb(205, 205, 205);
+    border-radius: 5px;
+    width: 65%;
+    height: 100px;
+    padding: 10px;
+}
+
+.btn button {
+    background-color: transparent;
+    border: 1px solid rgb(205, 205, 205) ;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    color: rgb(77, 77, 77);
+    margin: 10px 0;
+    padding: 8px 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+
+}
+
+.btn button:hover {
+    background-color: black;
+    color: white;
 }
