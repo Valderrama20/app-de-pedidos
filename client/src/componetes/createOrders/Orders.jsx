@@ -2,7 +2,7 @@ import { useState } from 'react'
 import style from './Orders.module.css'
 import axios from 'axios'
 
-const URL = import.meta.env.VITE_URL_FETCH || "http://localhost:3001"
+const URL = import.meta.env.VITE_URL_FETCH 
 
 
 

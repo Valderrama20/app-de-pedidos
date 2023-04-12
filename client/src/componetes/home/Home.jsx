@@ -7,7 +7,7 @@ import axios from "axios"
 
 
 
-const URL = import.meta.env.VITE_URL_FETCH || "http://localhost:3001"
+const URL = import.meta.env.VITE_URL_FETCH 
 
 export default function() {
   
