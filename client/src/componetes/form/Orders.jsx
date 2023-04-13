@@ -84,7 +84,9 @@ export default function () {
                  <textarea name="detalles" id="" cols="15" rows="5s" onChange={changeData}></textarea>
             </div>
             <div className={style.btn}>
-                <button onClick={create}>Crear Pedido</button>
+                <button onClick={create}>Crear Pedido</button> 
+
+                
             </div>
         
     </div>)
