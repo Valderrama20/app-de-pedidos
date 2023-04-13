@@ -8,9 +8,10 @@ const ordersSchema = new Schema({
     paletas: Boolean,
     envio: String,
     cliente: String,
-    fecha: String,
+    fecha: Number,
     total:  String,
     abono: String,
+    resta: String,
     detalles: String,
 })
 

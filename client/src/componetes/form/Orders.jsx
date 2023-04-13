@@ -18,12 +18,14 @@ export default function () {
                 fecha: "",
                  total: "",
                   abono: "",
+                  resta: "",
                   detalles: "",
                 })
 
     const changeData = (e) => { 
        let value = e.target.type == "checkbox"? e.target.checked : e.target.value
        setData({...data,[e.target.name]:value})
+       console.log(data)
     
     }
 
@@ -40,19 +42,24 @@ export default function () {
                 <img src="" alt="Logo" />
             </div>
             <div className={style.checkbox}>
+                A
                 <input type="checkbox" name='algodon' onClick={changeData}/>
+                P
                 <input type="checkbox" name='pochoclos' onClick={changeData}/>
+                PA
                 <input type="checkbox" name='paletas' onClick={changeData}/>
             </div>
             <div className={style.radio}>
+                envio
             <input type="radio" name="envio" value={true} onClick={changeData}/>
+                no envio
             <input type="radio" name="envio" value={false} onClick={changeData}/>
             </div>
             </div>
             <div className={style.right}>
                  <div className={style.input}> 
                 <label htmlFor="">Cliente:</label>
-                 <input type="text" name='cliente' onChange={changeData}/>
+                 <input type="text" name='cliente' onChange={changeData} />
             </div>
              <div className={style.input}> 
                 <label htmlFor="">Fecha de entrega:</label>
@@ -60,11 +67,15 @@ export default function () {
             </div >
             <div className={style.input}> 
                 <label htmlFor="">Total:</label>
-                 <input type="text" name='total' onChange={changeData}/>
+                 <input type="number" name='total' onChange={changeData}/>
             </div>
             <div className={style.input}> 
                 <label htmlFor="">Abono:</label>
-                 <input type="text" name='abono' onChange={changeData}/>
+                 <input type="number" name='abono' onChange={changeData}/>
+            </div>
+            <div className={style.input}> 
+                <label htmlFor="">Resta:</label>
+                 <input type="number" name='resta' onChange={changeData}/>
             </div>
             </div>
         </div>

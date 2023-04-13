@@ -1,7 +1,9 @@
 const {Router} = require("express")
 const Users = require('../../models/Users')
 const Orders = require("../../models/Orders")
+const { order } = require("../controllers/orders")
 const router = Router()
+
 
 
 ////////////////// Get \\\\\\\\\\\\\\\\\\\\\
@@ -9,9 +11,10 @@ const router = Router()
 router.get("/user", async (req,res) => {
    const id = req.params.id
 
-   const orders = await Users.find()
+   const users = await Users.find()
+   
 
-   res.json(orders)
+   res.json(users)
 })
 
 router.get("/user/:gmail", async (req,res) => {
@@ -35,7 +38,8 @@ router.get("/orders", async (req,res) => {
 
    const orders = await Orders.find()
 
-   const orden = orders.sort((a, b) => new Date(a.fecha) > new Date(b.fecha));
+   const orden = order(orders)
+   console.log(orden)
    res.json(orden)
 })
 
@@ -55,7 +59,7 @@ router.post("/newUser", (req,res) => {
 
 router.post('/newOrder', (req,res) => {
    const data = req.body
-   console.log(data)
+   data.fecha = new Date(data.fecha).getTime()
 
    const newOrder = new Orders(data)
    newOrder.save((err) => err? console.log(err): console.log('Pedido creado con exito') )

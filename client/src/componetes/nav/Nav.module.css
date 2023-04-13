@@ -1,33 +1,41 @@
 
 
  .nav{
-    border-bottom: 1px solid black;
     display: flex;
     justify-content: flex-end;
+    background: rgb(159,42,190);
+background: linear-gradient(90deg, rgba(159,42,190,1) 25%, rgba(203,76,181,1) 100%);
  }
 
-  .nav p{
+  .nav h1{
   position: absolute;
   font-size: 30px;  
-  top: -5px; 
-  left: 80px   ;
+  margin: 10px;
+  left: 80px;
+  color: white;
   }
 
  .bottons { 
     display: flex;
-    margin-right: 100px;
-    
+    margin-right: 80px;    
  }
 
  .button {
     display: flex;
     flex-direction: column;
-    margin: 15px;
+    margin: 5px 10px;
     align-items: center; 
-    color: black;
+    color: white;
+    outline: none;
  }
+ 
+ 
 
 
  .button i{
    font-size: 25px;
+ }
+
+ a {
+   text-decoration: none;
  }
