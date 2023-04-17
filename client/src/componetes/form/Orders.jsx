@@ -6,7 +6,8 @@ const URL = import.meta.env.VITE_URL_FETCH
 
 
 
-export default function () {
+export default function () { 
+    
 
     const [data,setData] = useState(
         {
@@ -15,9 +16,9 @@ export default function () {
              paletas:false ,
               envio: "false",
                cliente: "",
-                fecha: "",
+                fecha: 0,
                  total: "",
-                  abono: "",
+                  abono: "0",
                   resta: "",
                   detalles: "",
                 })

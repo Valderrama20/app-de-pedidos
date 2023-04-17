@@ -16,7 +16,7 @@ export default function () {
         </div>
         </Link>
 
-        <Link to="/pedidos" activeStyle='none'>
+        <Link to="/pedidos" >
         <div className={style.button}>
         <i className="bi bi-bag-check"></i>
          <label htmlFor="">Crear Pedido</label>
