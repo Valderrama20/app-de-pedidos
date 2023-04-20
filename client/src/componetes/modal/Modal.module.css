@@ -1,0 +1,40 @@
+
+.father {
+}
+
+.modal {
+  
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  background-color: black;
+  opacity: 0.5;
+  
+  
+}
+.modal2 {
+    height: 500px;
+    width: 70%;
+    background-color: white;
+    border-radius: 10px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    margin: auto;
+}
+
+.exit {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: rgb(159,42,190);
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    width: 40px;
+    border: none;
+    border-radius: 5px;
+}
