@@ -40,7 +40,7 @@ export default function() {
         <div className={style.home}>
 
               <h2>Pedidos</h2>
-            <div>
+            <div className={style.table}>
               <Tablet pedidos={orders}/>
             </div>
             

@@ -5,12 +5,16 @@ table {
     max-width: 1000px;
     margin: 0 auto;
     font-family: Arial, sans-serif;
+    border: 2px solid rgb(208, 208, 208);
+    
   }
+
+  
   
   th, td {
     text-align: left;
     padding: 8px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid#ddd;
   }
   
   th {

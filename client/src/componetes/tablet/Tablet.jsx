@@ -4,7 +4,7 @@ export default function Tablet ({pedidos}) {
 
 
     console.log(pedidos)
-    return <div>
+    return <div className={style.table}>
         <table >
   <thead>
     <tr>

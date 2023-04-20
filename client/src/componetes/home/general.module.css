@@ -4,13 +4,20 @@
 /* ------------------Home Css----------- */
 .home {
     text-align: center;
-    background-color: rgb(245, 245, 245);
+    background: rgb(159,42,190);
+    background: linear-gradient(90deg, rgba(159,42,190,1) 25%, rgba(203,76,181,1) 100%);
+    padding: 0 0 30px 0;
+}
+
+.home h2 {
+    color: white;
 }
 
 .home h2{
     display: inline;
     padding: 0 300px;
     font-size: 50px;
-    border-bottom: 2px solid rgb(208, 208, 208);
 
 }
+
+

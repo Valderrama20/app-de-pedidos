@@ -1,27 +1,18 @@
 import { useState } from 'react'
 import style from './Orders.module.css'
+import Swal from 'sweetalert2'
+import { PEDIDO } from '../../utils/variables'
 import axios from 'axios'
+
+
 
 const URL = import.meta.env.VITE_URL_FETCH 
 
 
-
 export default function () { 
-    
+   
 
-    const [data,setData] = useState(
-        {
-            algodon:false,
-             pochoclos:false,
-             paletas:false ,
-              envio: "false",
-               cliente: "",
-                fecha: 0,
-                 total: "",
-                  abono: "0",
-                  resta: "",
-                  detalles: "",
-                })
+    const [data,setData] = useState(PEDIDO)
 
     const changeData = (e) => { 
        let value = e.target.type == "checkbox"? e.target.checked : e.target.value
@@ -30,13 +21,24 @@ export default function () {
     
     }
 
-    const create = async () => {
-
+    const create = async (e) => {
+         e.preventDefault()
         const respuesta = await axios.post(`${URL}/newOrder`,data)
-        console.log(respuesta.data)
+        console.log(respuesta)
+       
+        Swal.fire(
+            {
+                icon: 'success',
+                title: 'Tu pedido fue creado exitosamente',
+                showConfirmButton: true
+            }
+          )
+         
     }
 
-    return (<div className={style.form}>
+    
+
+    return (<form className={style.form} onSubmit={create}>
         <div className={style.top}>
             <div className={style.left}>
              <div> 
@@ -60,35 +62,32 @@ export default function () {
             <div className={style.right}>
                  <div className={style.input}> 
                 <label htmlFor="">Cliente:</label>
-                 <input type="text" name='cliente' onChange={changeData} />
+                 <input type="text" name='cliente' onChange={changeData} required />
             </div>
              <div className={style.input}> 
                 <label htmlFor="">Fecha de entrega:</label>
-                 <input type="date" name='fecha' onChange={changeData} />
+                 <input type="date" name='fecha' onChange={changeData} required />
             </div >
             <div className={style.input}> 
                 <label htmlFor="">Total:</label>
-                 <input type="number" name='total' onChange={changeData}/>
+                 <input type="number" name='total' onChange={changeData} required />
             </div>
             <div className={style.input}> 
                 <label htmlFor="">Abono:</label>
                  <input type="number" name='abono' onChange={changeData}/>
             </div>
-            <div className={style.input}> 
-                <label htmlFor="">Resta:</label>
-                 <input type="number" name='resta' onChange={changeData}/>
-            </div>
+            
             </div>
         </div>
         <div className={style.detalles}> 
                 <label htmlFor="">Detalles:</label>
-                 <textarea name="detalles" id="" cols="15" rows="5s" onChange={changeData}></textarea>
+                 <textarea name="detalles" id="" cols="15" rows="5s" onChange={changeData} required></textarea>
             </div>
             <div className={style.btn}>
-                <button onClick={create}>Crear Pedido</button> 
+                <input type="submit" />
 
                 
             </div>
         
-    </div>)
+    </form>)
 }
