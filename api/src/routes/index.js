@@ -39,7 +39,6 @@ router.get("/orders", async (req,res) => {
    const orders = await Orders.find()
 
    const orden = order(orders)
-   console.log(orden)
    res.json(orden)
 })
 

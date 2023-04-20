@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react"
 import Nav from "../nav/Nav"
-import Cars from "./Cars"
 import style from "./general.module.css"
 import axios from "axios"
+import Tablet from "../tablet/Tablet"
 
 
 
@@ -20,20 +20,28 @@ export default function() {
 
    const getOrders = async () => {
     const data = await axios.get(`${URL}/orders`)
-    console.log(data.data)
-    setOrders(data.data)
+    const data2 = data.data.map(e => {
+        return {
+          ...e,
+          fecha: new Date(e.fecha).toLocaleDateString()
+        }
+      
+       }
+         )
+         console.log(data2)
+
+    setOrders(data2)
    }
      
 
-   console.log(orders)
 
     return(<div>
          <Nav/>
         <div className={style.home}>
 
               <h2>Pedidos</h2>
-            <div>
-              {orders.map(e => <Cars key={e._id} order={e}/>)}  
+            <div className={style.table}>
+              <Tablet pedidos={orders}/>
             </div>
             
             
