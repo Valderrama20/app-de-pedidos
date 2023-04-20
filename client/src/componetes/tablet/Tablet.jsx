@@ -1,6 +1,6 @@
 import style from './Tablet.module.css'
 
-export default function Tablet ({pedidos}) {
+export default function Tablet ({pedidos,change}) {
 
 
     console.log(pedidos)
@@ -29,7 +29,7 @@ export default function Tablet ({pedidos}) {
         <td>${e.total}</td>
         <td>${e.abono}</td>
         <td>${e.total - e.abono}</td>
-        <td>Link</td>
+        <td onClick={change}>Link</td>
       </tr>)
       }
     

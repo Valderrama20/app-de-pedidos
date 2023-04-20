@@ -3,6 +3,7 @@ import Nav from "../nav/Nav"
 import style from "./general.module.css"
 import axios from "axios"
 import Tablet from "../tablet/Tablet"
+import Modal from "../modal/Modal"
 
 
 
@@ -12,6 +13,7 @@ const URL = import.meta.env.VITE_URL_FETCH
 export default function() {
   
   const [orders , setOrders] = useState([])
+  const [details , setDetails] = useState(false)
 
 
    useEffect(() => {
@@ -32,20 +34,19 @@ export default function() {
 
     setOrders(data2)
    }
+
+   const changeDetails = () => {
+    setDetails(!details)
+   }
      
 
 
     return(<div>
          <Nav/>
-        <div className={style.home}>
-
+         <div className={style.home}>
               <h2>Pedidos</h2>
-            <div className={style.table}>
-              <Tablet pedidos={orders}/>
-            </div>
-            
-            
+              <Tablet pedidos={orders} change={changeDetails}/>
+              {details && <Modal change={changeDetails}/>}
         </div>
-       
         </div>)
 }

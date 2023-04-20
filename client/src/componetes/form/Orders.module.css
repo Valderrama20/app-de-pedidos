@@ -86,7 +86,7 @@ img {
 
 .detalles textarea {
     outline: none;
-    border: 1px solid white;
+    border: 1px solid var(--border-color);
     border-radius: 5px;
     width: 65%;
     max-width: 70%;
