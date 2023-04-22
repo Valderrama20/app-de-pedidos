@@ -4,7 +4,7 @@ import App from './App'
 import './index.css'
 import {createBrowserRouter,RouterProvider,Route,Link} from 'react-router-dom'
 import Home from './Pages/Home'
-import CreateOrder from './Pages/CreateOrder'
+
 
 
 const router = createBrowserRouter([
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/pedidos",
-    element: <CreateOrder/>
+    element: <h1>jose</h1>
   }
 ])
 
