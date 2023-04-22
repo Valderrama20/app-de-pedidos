@@ -1,12 +1,22 @@
 
+.table {
+  height: calc(100vh - 146px);
+  overflow: auto;
+}
 table {
     border-collapse: collapse;
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
     font-family: Arial, sans-serif;
-    border: 2px solid rgb(208, 208, 208);
     
+    
+  }
+
+  table thead th{
+    position: sticky;
+    top: 0;
+
   }
 
   
