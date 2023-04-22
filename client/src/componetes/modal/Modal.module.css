@@ -24,7 +24,10 @@
     left: 0;
     bottom: 0;
     margin: auto;
+    overflow-y: auto;
+    
 }
+
 
 .exit {
     position: absolute;
@@ -37,4 +40,73 @@
     width: 40px;
     border: none;
     border-radius: 5px;
+}
+
+.panels {
+  display: flex;
+  margin: 30px 0;
+}
+
+.left {
+  width: 50%;
+}
+
+.left img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+}
+
+.left p {
+  font-size: 20px;
+  margin: 50px 0;
+  }
+
+#envio {
+   
+  }
+
+
+.right {
+    width: 50%;
+    margin-left: 20px;
+    text-align: left;
+}
+
+
+.modal2 label{
+  font-size: 20px;
+  font-weight: 600;
+  margin: 10px 0;;
+  color: rgb(58, 58, 58);
+}
+
+.right p{
+  font-size: 20px;
+  margin: 10px 0;
+  border-bottom: 1px solid rgb(193, 193, 193);
+  width: 80%;
+  
+}
+
+.detalles {
+  width: 80%;
+  margin: 20px 68px;
+  padding: 10px 20px;
+  height: auto;
+  overflow: hidden;
+  word-wrap: break-word;
+  border: 1px solid rgb(193, 193, 193);
+  border-radius: 10px;
+  color: rgb(78, 78, 78);
+}
+
+.true {
+  color: rgb(0, 171, 0);
+  margin: 1px solid  rgb(193, 193, 193); 
+}
+
+.false {
+  color: red;
+  margin: 0 5px;
 }
