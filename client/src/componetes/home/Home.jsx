@@ -6,14 +6,13 @@ import Tablet from "../tablet/Tablet"
 import Modal from "../modal/Modal"
 
 
-
-
 const URL = import.meta.env.VITE_URL_FETCH 
 
 export default function() {
   
   const [orders , setOrders] = useState([])
   const [details , setDetails] = useState(false)
+  const [order , setOrder] = useState({})
 
 
    useEffect(() => {
@@ -35,8 +34,9 @@ export default function() {
     setOrders(data2)
    }
 
-   const changeDetails = () => {
+   const changeDetails = (e) => {
     setDetails(!details)
+    setOrder(e)
    }
      
 
@@ -46,7 +46,7 @@ export default function() {
          <div className={style.home}>
               <h2>Pedidos</h2>
               <Tablet pedidos={orders} change={changeDetails}/>
-              {details && <Modal change={changeDetails}/>}
+              {details && <Modal change={changeDetails} pedido={order}/>}
         </div>
         </div>)
 }

@@ -3,7 +3,6 @@ import style from './Tablet.module.css'
 export default function Tablet ({pedidos,change}) {
 
 
-    console.log(pedidos)
     return <div className={style.table}>
         <table >
   <thead>
@@ -29,7 +28,7 @@ export default function Tablet ({pedidos,change}) {
         <td>${e.total}</td>
         <td>${e.abono}</td>
         <td>${e.total - e.abono}</td>
-        <td onClick={change}>Link</td>
+        <td onClick={() => change(e)}>Link</td>
       </tr>)
       }
     
