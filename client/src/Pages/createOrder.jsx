@@ -1,7 +1,7 @@
 import Orders from '../componetes/form/Orders'
 import Nav from '../componetes/nav/Nav'
 
-export default () => {
+export default function CreateOrders (){
     return <div>
         <Nav/>
         <Orders/>
