@@ -14,7 +14,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/pedidos",
-    element: <CreateOrder/>
+    element: <Prueba/>
   }
 ])
 
