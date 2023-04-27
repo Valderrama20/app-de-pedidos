@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom/client'
 import App from './App'
 import './index.css'
 import {createBrowserRouter,RouterProvider,Route,Link} from 'react-router-dom'
-import Home from './Pages/Home'
-import CreateOrder from './Pages/CreateOrder'
+import {Home,CreateOrder} from './Pages'
 
 
 
