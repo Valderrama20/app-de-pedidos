@@ -9,7 +9,7 @@ import axios from 'axios'
 const URL = import.meta.env.VITE_URL_FETCH 
 
 
-export default function () { 
+export default function Orders () { 
    
 
     const [data,setData] = useState(PEDIDO)
