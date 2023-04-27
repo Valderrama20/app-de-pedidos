@@ -1,10 +1,10 @@
-import CreateOrder from "./CreateOrder";
+import Orders from "../componetes/orders/Orders"
 
 
 
 export default function Prueba () {
     return <div>
-        <CreateOrder/>
+         <Orders/>
         <h1>jose</h1>
     </div>
 }
