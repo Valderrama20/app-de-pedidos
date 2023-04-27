@@ -4,7 +4,7 @@ import App from './App'
 import './index.css'
 import {createBrowserRouter,RouterProvider,Route,Link} from 'react-router-dom'
 import Home from './Pages/Home'
-import CreateOrders from './Pages/CreateOrder'
+import CreateOrder from './Pages/CreateOrder'
 
 
 
@@ -15,7 +15,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/pedidos",
-    element: <CreateOrders/>
+    element: <CreateOrder/>
   }
 ])
 
