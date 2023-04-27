@@ -29,9 +29,9 @@ export default function() {
       
        }
          )
-         console.log(data2)
+         const reversed = data2.reverse()   
 
-    setOrders(data2)
+    setOrders(reversed)
    }
 
    const changeDetails = (e) => {
