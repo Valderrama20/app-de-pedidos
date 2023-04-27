@@ -1,8 +1,9 @@
-import Orders from '../componetes/form/Orders'
+
 import Nav from '../componetes/nav/Nav'
+import Orders from '../componetes/orders/Orders'
 
 export default function CreateOrder(){
     return <div>
-        <h1>jose</h1>
+        <Orders/>
     </div>
 }
