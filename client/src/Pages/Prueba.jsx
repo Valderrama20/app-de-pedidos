@@ -1,8 +1,10 @@
+import CreateOrder from "./CreateOrder";
 
 
 
-export default function Order2 () {
+export default function Prueba () {
     return <div>
+        <CreateOrder/>
         <h1>jose</h1>
     </div>
 }
