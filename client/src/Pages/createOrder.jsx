@@ -1,7 +1,7 @@
 
 import Nav from '../componetes/nav/Nav'
 
-export default function () {
+export default () => {
     return <div>
         <Nav/>
     </div>
