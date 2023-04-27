@@ -3,6 +3,6 @@ import Nav from '../componetes/nav/Nav'
 
 export default () => {
     return <div>
-        <Nav/>
+        <h1>jose</h1>
     </div>
 }
