@@ -1,8 +1,17 @@
+import { Link, redirect } from 'react-router-dom'
 import style from './Modal.module.css'
 
 
 export default function Modal ({change, pedido}) {
-    console.log(pedido);
+
+    const jose = () => {
+
+    const {__v, _id, ...datos} = pedido
+      window.localStorage.setItem("modificarPedido", JSON.stringify(datos))
+    }
+
+    console.log(pedido)
+   
     return <div className={style.father}>
         <div className={style.modal}></div>
         <div className={style.modal2}>
@@ -44,6 +53,11 @@ export default function Modal ({change, pedido}) {
             <div className={style.detalles}>
                  
                 <p>{pedido.detalles}</p>
+            </div>
+
+            <div>
+               <Link to={`/editarPedido/${pedido._id}`}><button onClick={jose}>Modificar</button></Link> 
+                <button>Eliminar</button>
             </div>
             
         </div>

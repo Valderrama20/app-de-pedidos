@@ -5,7 +5,7 @@ export const PEDIDO = {
      paletas:false ,
       envio: "false",
        cliente: "",
-        fecha: 0,
+        fecha: "",
          total: "",
           abono: "0",
           detalles: "",

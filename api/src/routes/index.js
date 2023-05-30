@@ -67,5 +67,33 @@ router.post('/newOrder', (req,res) => {
 
 })
 
+ /////////////////////// PUT \\\\\\\\\\\\\\\\\\\\\
+
+ router.put('/editOrder/:id', async (req,res) => {
+  const id = req.params.id
+  let data = req.body
+  console.log(data.fecha) 
+  console.log(data) 
+
+  console.log(new Date(data.fecha),"fechasssssss")  
+
+  data["fecha"]= new Date(data.fecha).getTime()
+
+ 
+   const filter = { _id: id}
+   const update = { $set: data}
+  
+    
+    Orders.updateOne(filter, update, (err, result) => {
+      if (err) {
+         console.log(err)
+      }
+     res.send({modified: true})
+
+    } )
+
+ 
+ })
+
 
 module.exports = router

@@ -22,9 +22,15 @@ export default function() {
    const getOrders = async () => {
     const data = await axios.get(`${URL}/orders`)
     const data2 = data.data.map(e => {
+      
+        const fecha = new Date(e.fecha).toLocaleDateString()
+        const modifique = fecha.split("/")
+        modifique[1] = modifique[1] < 10 ? `0${modifique[1]}`: modifique[1]
+        modifique[0] = modifique[0] < 10 ? `0${modifique[0]}`: modifique[0]
+
         return {
           ...e,
-          fecha: new Date(e.fecha).toLocaleDateString()
+          fecha: modifique.join("/")
         }
       
        }
