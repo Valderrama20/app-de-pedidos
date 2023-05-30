@@ -21,15 +21,8 @@ export default function() {
 
    const getOrders = async () => {
     const data = await axios.get(`${URL}/orders`)
-    const data2 = data.data.map(e => {
-        return {
-          ...e,
-          fecha: new Date(e.fecha).toLocaleDateString()
-        }
-      
-       }
-         )
-         const reversed = data2.reverse()   
+    
+         const reversed = data.data.reverse()   
 
     setOrders(reversed)
    }
