@@ -6,6 +6,7 @@ import axios from 'axios'
 
 
 
+
 const URL = import.meta.env.VITE_URL_FETCH 
 
 
@@ -22,7 +23,7 @@ export default function Orders () {
             }
     },[])
 
-    console.log(data.fecha.split("/").reverse().join("-"))
+    console.log(data.fecha)
 
 
     const changeData = (e) => { 
@@ -34,20 +35,25 @@ export default function Orders () {
     const modifyOrder = async (e) => {
         e.preventDefault()
         const respuesta = await axios.put(`${URL}/editOrder/${url[2]}`,data)
-        console.log(respuesta)
-    }
- 
-    const create = async (e) => {
-        const respuesta = await axios.post(`${URL}/newOrder`,data)
-        console.log(respuesta)
-       
-        Swal.fire(
-            {
+        
+        Swal.fire({
                 icon: 'success',
                 title: 'Tu pedido fue creado exitosamente',
                 showConfirmButton: true
-            }
-          )
+            }).then(() => {window.location.href = `${window.location.origin}`;})
+
+    }
+ 
+    const create = async (e) => {
+        e.preventDefault()
+        const respuesta = await axios.post(`${URL}/newOrder`,data)
+       
+        Swal.fire({
+                icon: 'success',
+                title: 'Tu pedido fue creado exitosamente',
+                showConfirmButton: true
+            })
+            .then(() => {window.location.href = `${window.location.origin}`;})
          
     }
 
@@ -81,7 +87,10 @@ export default function Orders () {
             </div>
              <div className={style.input}> 
                 <label htmlFor="">Fecha de entrega:</label>
-                 <input type="date" name='fecha' onChange={changeData}  value={data.fecha.split("/").reverse().join("-")} required />
+                 { url[1] === "editarPedido"
+                   ?<input type='text' name='fecha' value={data.fecha} readOnly></input>
+                   :<input type="date" name='fecha' onChange={changeData}  value={data.fecha} required />
+                 }
             </div >
             <div className={style.input}> 
                 <label htmlFor="">Total:</label>

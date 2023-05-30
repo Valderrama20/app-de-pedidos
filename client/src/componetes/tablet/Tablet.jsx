@@ -1,7 +1,24 @@
 import style from './Tablet.module.css'
 
 export default function Tablet ({pedidos,change}) {
+    
+  const data2 = pedidos.map(e => {
+      
+   let fechaEspecifica = new Date(e.fecha);
 
+   let year = fechaEspecifica.getFullYear();
+   let month = ("0" + (fechaEspecifica.getMonth() + 1)).slice(-2);
+   let day = ("0" + fechaEspecifica.getDate()).slice(-2);
+
+   let fechaFormateada = year + "-" + month + "-" + day;
+
+    return {
+      ...e,
+      fecha: fechaFormateada
+    }
+  
+   }
+     )
 
     return <div className={style.table}>
         <table >
@@ -19,7 +36,7 @@ export default function Tablet ({pedidos,change}) {
   </thead>
   <tbody>
 
-    {pedidos?.map(e => 
+    {data2?.map(e => 
         <tr>
         <td>{e.cliente}</td>
         <td>{e.fecha}</td>

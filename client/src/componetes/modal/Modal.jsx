@@ -1,9 +1,36 @@
 import { Link, redirect } from 'react-router-dom'
 import style from './Modal.module.css'
+import axios from 'axios'
+import Swal from 'sweetalert2'
+
+
+const URL = import.meta.env.VITE_URL_FETCH 
+
+
 
 
 export default function Modal ({change, pedido}) {
 
+   const deleteOrder =  async () => {
+
+    Swal.fire({
+        title: 'Quieres eliminar este pedido?',
+        showDenyButton: true,
+        confirmButtonText: 'Eliminar',
+        denyButtonText: `No Eliminar`,
+      }).then( async (result) => {
+        if (result.isConfirmed) {
+         await axios.delete(`${URL}/deleteOrder/${pedido._id}`)
+          Swal.fire('Eliminado', '', 'success').then(() => change()  )
+        }
+      })
+      
+ 
+    console.log("respuesta")
+ 
+
+   }
+     
     const jose = () => {
 
     const {__v, _id, ...datos} = pedido
@@ -57,7 +84,7 @@ export default function Modal ({change, pedido}) {
 
             <div>
                <Link to={`/editarPedido/${pedido._id}`}><button onClick={jose}>Modificar</button></Link> 
-                <button>Eliminar</button>
+                <button onClick={deleteOrder}>Eliminar</button>
             </div>
             
         </div>
