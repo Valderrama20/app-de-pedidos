@@ -3,6 +3,7 @@ import style from './Tablet.module.css'
 export default function Tablet ({pedidos,change}) {
     
   const data2 = pedidos.map(e => {
+
       
    let fechaEspecifica = new Date(e.fecha);
 
@@ -32,12 +33,13 @@ export default function Tablet ({pedidos,change}) {
       <th>Abono</th>
       <th>Resta</th>
       <th>Detalles</th>
+      <th>Entregado</th>
     </tr>
   </thead>
   <tbody>
 
     {data2?.map(e => 
-        <tr>
+        <tr className={ e?.entregado ? style.delivered : null}>
         <td>{e.cliente}</td>
         <td>{e.fecha}</td>
         <td>{e.algodon && "Al "}{e.pochoclos && "Po "}{e.paletas && "Pa"}</td>
@@ -46,6 +48,7 @@ export default function Tablet ({pedidos,change}) {
         <td>${e.abono}</td>
         <td>${e.total - e.abono}</td>
         <td onClick={() => change(e)}>Link</td>
+        <td>{e?.entregado?"✅":"❌"}</td>
       </tr>)
       }
     

@@ -9,4 +9,5 @@ export const PEDIDO = {
          total: "",
           abono: "0",
           detalles: "",
+          entregado: false
         }

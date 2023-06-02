@@ -11,10 +11,12 @@ const URL = import.meta.env.VITE_URL_FETCH
 
 export default function Modal ({change, pedido}) {
 
+    console.log(window.location.origin + `/editarPedido/${pedido._id}`)
+
    const deleteOrder =  async () => {
 
     Swal.fire({
-        title: 'Quieres eliminar este pedido?',
+        title: `Quieres eliminar el pedido de: ${pedido.cliente}`,
         showDenyButton: true,
         confirmButtonText: 'Eliminar',
         denyButtonText: `No Eliminar`,
@@ -24,20 +26,18 @@ export default function Modal ({change, pedido}) {
           Swal.fire('Eliminado', '', 'success').then(() => change()  )
         }
       })
-      
- 
-    console.log("respuesta")
- 
+   }
 
+   let orderDelivered = async () => {
+     await axios.put(`${URL}/orderDelivered/${pedido._id}`,{entregado:true})
    }
      
-    const jose = () => {
+    const modifyOrder = () => {
 
     const {__v, _id, ...datos} = pedido
       window.localStorage.setItem("modificarPedido", JSON.stringify(datos))
+      window.location.href = window.location.origin + `/editarPedido/${pedido._id}`
     }
-
-    console.log(pedido)
    
     return <div className={style.father}>
         <div className={style.modal}></div>
@@ -82,9 +82,10 @@ export default function Modal ({change, pedido}) {
                 <p>{pedido.detalles}</p>
             </div>
 
-            <div>
-               <Link to={`/editarPedido/${pedido._id}`}><button onClick={jose}>Modificar</button></Link> 
+            <div className={style.btn}>
+                <button onClick={modifyOrder}>Modificar</button>
                 <button onClick={deleteOrder}>Eliminar</button>
+                {!pedido?.entregado && <button onClick={orderDelivered}>Entregado</button>}
             </div>
             
         </div>

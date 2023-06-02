@@ -96,6 +96,28 @@ router.post('/newOrder', (req,res) => {
  
  })
 
+ router.put("/orderDelivered/:id", (req,res) => {
+
+   const id = req.params.id
+   let data = req.body
+   
+
+   const filter = { _id: id}
+   const update = { $set: data}
+
+   Orders.updateOne(filter, update, (err, result) => {
+      if (err) {
+         console.log(err)
+      }
+     res.send({delivered: true})
+
+    } )
+
+   
+
+
+ })
+
  /////////////////////// DELETE \\\\\\\\\\\\\\\\\\\\\
 
  router.delete("/deleteOrder/:id", async (req,res) => {
