@@ -13,6 +13,7 @@ const ordersSchema = new Schema({
     abono: String,
     resta: String,
     detalles: String,
+    entregado: Boolean
 })
 
 const Orders = mongoose.model('Orders', ordersSchema)

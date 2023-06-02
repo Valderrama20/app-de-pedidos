@@ -1,6 +1,4 @@
 
-s
-
 .modal {
   
   height: 100%;
@@ -8,7 +6,7 @@ s
   position: absolute;
   top: 0;
   background-color: black;
-  opacity: 0.5;
+  opacity: 0.4;
   
   
 }
@@ -61,9 +59,7 @@ s
   margin: 50px 0;
   }
 
-#envio {
-   
-  }
+
 
 
 .right {
@@ -108,4 +104,27 @@ s
 .false {
   color: red;
   margin: 0 5px;
+}
+
+.btn button {
+  background-color: transparent;
+    border-radius: 5px;
+    border: 1px solid;
+    font-size: 18px;
+    font-weight: 600;
+    margin: 0px 10px 30px 10px;
+    padding: 8px 30px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn button:nth-child(1) {
+  color:rgb(77, 77, 188);
+}
+.btn button:nth-child(2) {
+  color: rgb(220, 73, 73);
+}
+.btn button:nth-child(3) {
+  color: rgb(64, 187, 64);
 }

@@ -19,13 +19,20 @@ export default function() {
       getOrders()
    },[])
 
+   function compararFechas(a, b) {
+     return b.fecha - a.fecha;
+   }
+   
+
    const getOrders = async () => {
     const data = await axios.get(`${URL}/orders`)
     
-         const reversed = data.data.reverse()   
-
-    setOrders(reversed)
+     const order = data.data.sort(compararFechas)
+         order.reverse()
+    setOrders(order)
    }
+
+    console.log(orders)
 
    const changeDetails = (e) => {
     setDetails(!details)
