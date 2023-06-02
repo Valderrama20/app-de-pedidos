@@ -11,8 +11,6 @@ const URL = import.meta.env.VITE_URL_FETCH
 
 export default function Modal ({change, pedido}) {
 
-    console.log(window.location.origin + `/editarPedido/${pedido._id}`)
-
    const deleteOrder =  async () => {
 
     Swal.fire({
@@ -32,11 +30,10 @@ export default function Modal ({change, pedido}) {
      await axios.put(`${URL}/orderDelivered/${pedido._id}`,{entregado:true})
    }
      
-    const modifyOrder = () => {
+    const jose = () => {
 
     const {__v, _id, ...datos} = pedido
       window.localStorage.setItem("modificarPedido", JSON.stringify(datos))
-      window.location.href = window.location.origin + `/editarPedido/${pedido._id}`
     }
    
     return <div className={style.father}>
@@ -83,9 +80,9 @@ export default function Modal ({change, pedido}) {
             </div>
 
             <div className={style.btn}>
-                <button onClick={modifyOrder}>Modificar</button>
+               <Link to={`/editarPedido/${pedido._id}`}><button onClick={jose}>Modificar</button></Link> 
                 <button onClick={deleteOrder}>Eliminar</button>
-                {!pedido?.entregado && <button onClick={orderDelivered}>Entregado</button>}
+                {!pedido?.entregado && <button onClick={orderDelivered}>Entregar</button>}
             </div>
             
         </div>
